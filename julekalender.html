@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Julekalender - Juledrikker</title>
+   <style>
+       /* Grunnleggende styling */
+       body {
+           font-family: 'Courier New', Courier, monospace;
+           text-align: center;
+           background: url('peis.jpg') no-repeat center center fixed; /* Bakgrunnsbilde */
+           background-size: cover;
+           color: #fff;
+           padding: 0;
+           margin: 0;
+       }
+       h1 {
+           color: #aeddb6;
+           margin-top: 20px;
+           text-shadow: 2px 2px 5px #8b0000;
+       }
+       .luke-container {
+           display: flex;
+           justify-content: center;
+           gap: 20px;
+           margin-top: 50px;
+       }
+       .luke {
+           width: 100px;
+           height: 100px;
+           background-color: #ba2916;
+           color: #a0e1b3;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 1.5em;
+           cursor: pointer;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+           transition: transform 0.3s, background-color 0.3s;
+       }
+       .luke:hover {
+           background-color: #d64545;
+           transform: scale(1.1);
+       }
+       .oppskrift {
+           display: none;
+           margin-top: 30px;
+           padding: 20px;
+           background-color: rgba(255, 255, 255, 0.8);
+           border: 2px solid #8b0000;
+           border-radius: 10px;
+           max-width: 400px;
+           margin: 30px auto;
+           text-align: left;
+           color: #8b0000;
+       }
+       .oppskrift h2 {
+           color: #8b0000;
+       }
+       .oppskrift img {
+           width: 100%;
+           height: auto;
+           border-radius: 10px;
+           margin-top: 10px;
+       }
+   </style>
+</head>
+<body>
+
+   <h1>Velg en luke og finn en juledrink!</h1>
+
+   <div class="luke-container">
+       <div class="luke" onclick="visOppskrift(1)">1</div>
+       <div class="luke" onclick="visOppskrift(2)">2</div>
+       <div class="luke" onclick="visOppskrift(3)">3</div>
+   </div>
+
+   <div id="oppskrift1" class="oppskrift">
+       <h2>Educoms Julegløgg Martini</h2>
+       <p><strong>Ingredienser:</strong><br>
+           - 4 cl vodka eller gin<br>
+           - 2 cl rød gløgg<br>
+           - 1 cl Cointreau<br>
+           - 1 cl tranebærjuice<br>
+           - 1 ts honning eller lønnesirup<br>
+           - Isbiter
+       </p>
+       <p><strong>Til pynt:</strong> Appelsinskive med nellikspiker, kanelstang, og rosmarinkvist.</p>
+       <p><strong>Fremgangsmåte:</strong> Rist ingrediensene med is i en shaker. Sil over i glass og pynt.</p>
+       <img src="educom.WEBP" alt="Educoms Julegløgg Martini">
+   </div>
+
+   <div id="oppskrift2" class="oppskrift">
+       <h2>Jule-mocktail</h2>
+       <p><strong>Ingredienser:</strong><br>
+           - 5 dl eplejuice<br>
+           - 1 kanelstang<br>
+           - 3-4 hele nellikspiker<br>
+           - 1 stjerneanis<br>
+           - 1 ts honning<br>
+           - Appelsinskiver
+       </p>
+       <p><strong>Fremgangsmåte:</strong> Varm eplejuice med krydder og honning i en kjele. La småkoke i 10 minutter, sil av krydderet, og server varmt med appelsinskive.</p>
+       <img src="apple.WEBP" alt="Jule-Applesider">
+   </div>
+
+   <div id="oppskrift3" class="oppskrift">
+       <h2>Krydret Kaffe Baileys</h2>
+       <p><strong>Ingredienser:</strong><br>
+           - 2 cl Baileys<br>
+           - 1 cl espresso eller sterk kaffe<br>
+           - 1 klype kanel<br>
+           - 1 klype muskatnøtt<br>
+           - Pisket krem (til topping)
+       </p>
+       <p><strong>Fremgangsmåte:</strong> Bland Baileys med espresso og krydder i en kopp. Topp med pisket krem og et dryss kanel.</p>
+       <img src="baileys.WEBP" alt="Krydret Kaffe Baileys">
+   </div>
+
+   <script>
+       function visOppskrift(lukeNummer) {
+           // Skjul alle oppskrifter først
+           document.querySelectorAll('.oppskrift').forEach(oppskrift => {
+               oppskrift.style.display = 'none';
+           });
+           // Vis valgt oppskrift
+           document.getElementById(`oppskrift${lukeNummer}`).style.display = 'block';
+       }
+   </script>
+
+</body>
+</html>
